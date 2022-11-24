@@ -1,9 +1,14 @@
 import React from 'react'
 
 const Loader = () => {
-  return (
-    <h1>Loader</h1>
-  )
+	return (
+		<div className='flex justify-center items-center'>
+			<div
+				className='animate-spin rounded-full h-32 
+       w-32 border-b-2 border-yellow-300'
+			/>
+		</div>
+	)
 }
 
 export default Loader
