@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ethers } from 'ethers'
 
 import {
@@ -23,9 +23,16 @@ const getEthereumContract = () => {
 	console.log(provider, signer, transactionContract)
 }
 
-export const TransactionProvider = ({ children }) => {
+export const TransactionsProvider = ({ children }) => {
+	const [connectedAccount, setConnectedAccount] =
+		useState('')
+
+	const checkIfWalletIsConnected = async () => {
+		if (!ethereum) return alert('please install metamask')
+	}
+
 	return (
-		<TransactionContext.Provider value={{}}>
+		<TransactionContext.Provider value='test'>
 			{children}
 		</TransactionContext.Provider>
 	)
